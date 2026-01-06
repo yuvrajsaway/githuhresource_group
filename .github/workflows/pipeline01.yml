@@ -3,6 +3,10 @@ name: "ye humari testing pipeline hai"
 on:
   workflow_dispatch:   # manual run karta hai
 
+permissions:
+  id-token: write
+  contents: read
+
 # on:
 #   push:
 #     branches:
@@ -15,4 +19,5 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6.0.1
+        
 
