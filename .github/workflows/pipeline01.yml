@@ -20,20 +20,6 @@ jobs:
       - name: Checkout for git clone
         uses: actions/checkout@v6.0.1
 
-      # - name: Install Azure CLI (if not present)
-      #   run: |
-      #     if ! command -v az >/dev/null 2>&1; then
-      #       echo "Azure CLI not found, installing..."
-      #       curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-      #     else
-      #       echo "Azure CLI already installed"
-      #     fi
-
-      # - name: Verify Azure CLI
-      #   run: |
-      #     which az
-      #     az version          
-                
       - name: Azure Login via OIDC
         uses: azure/login@v2
         with:
@@ -43,6 +29,15 @@ jobs:
 
       - name: HashiCorp - Setup Terraform
         uses: hashicorp/setup-terraform@v2.0.3
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform validate
+        run: terraform validate
+
+      - name: Terraform Plan
+        run: terraform plan
 
   
       
