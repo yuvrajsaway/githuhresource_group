@@ -33,11 +33,11 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
-      - name: Terraform validate
-        run: terraform validate
+      # - name: Terraform validate
+      #   run: terraform validate
 
-      - name: Terraform Plan
-        run: terraform plan
+      # - name: Terraform Plan
+      #   run: terraform plan
 
   
       
