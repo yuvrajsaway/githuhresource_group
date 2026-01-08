@@ -30,17 +30,26 @@ jobs:
       - name: HashiCorp - Setup Terraform
         uses: hashicorp/setup-terraform@v2.0.3
 
-      - name: Terraform Init
-        run: terraform init
-        working-directory: environment/dev
+      # - name: Terraform Init
+      #   run: terraform init
+      #   working-directory: environment/dev
 
-      - name: Terraform validate
-        run: terraform validate
-        working-directory: environment/dev
+      # - name: Terraform validate
+      #   run: terraform validate
+      #   working-directory: environment/dev
+
+      # - name: Terraform Plan
+      #   run: terraform plan
+      #   working-directory: environment/dev
+       
+      - name: Terraform Init
+        run: terraform -chdir=environment/dev init
+
+      - name: Terraform Validate
+        run: terraform -chdir=environment/dev validate
 
       - name: Terraform Plan
-        run: terraform plan
-        working-directory: environment/dev
+        run: terraform -chdir=environment/dev plan
 
   
       
