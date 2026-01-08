@@ -32,12 +32,15 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
+        working-directory: environment/dev
 
       - name: Terraform validate
         run: terraform validate
+        working-directory: environment/dev
 
       - name: Terraform Plan
         run: terraform plan
+        working-directory: environment/dev
 
   
       
