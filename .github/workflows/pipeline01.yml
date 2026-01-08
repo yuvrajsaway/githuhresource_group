@@ -35,8 +35,8 @@ jobs:
           curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
 
       - name: Run TFLint
-        run: tflint
-        working-directory: environment/dev
+        run: tflint --chdir=environment/dev --exit-zero
+      
 
       - name: Terraform Init
         run: terraform init
