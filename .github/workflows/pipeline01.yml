@@ -36,7 +36,13 @@ jobs:
 
       - name: Run TFLint
         run: tflint --chdir=environment/dev || true
-      
+
+      - name: Install tfsec
+        run: |
+          curl -s https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install.sh | bash
+
+      - name: Run tfsec
+        run: tfsec environment/dev
 
       - name: Terraform Init
         run: terraform init
