@@ -1,17 +1,17 @@
 name: "ye humari testing pipeline hai"
 
-on:
-  workflow_dispatch:   # manual run karta hai
+# on:
+#   workflow_dispatch:   # manual run karta hai
 
 permissions:
   id-token: write
   contents: read
 
-# on:
-#   push:
-#     branches:
-#       - 'main'
-#       - 'feature/**'
+on:
+  push:
+    branches:
+      - 'main'
+      # - 'feature/**'
 
 jobs:
   azure_resource_create:
