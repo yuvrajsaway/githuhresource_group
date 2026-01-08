@@ -1,17 +1,17 @@
 name: "ye humari testing pipeline hai"
 
-# on:
-#   workflow_dispatch:   # manual run karta hai
+on:
+  workflow_dispatch:
 
 permissions:
   id-token: write
   contents: read
 
-on:
-  push:
-    branches:
-      - 'main'
-      # - 'feature/**'
+# on:
+#   push:
+#     branches:
+#       - 'main'
+#       # - 'feature/**'
 
 jobs:
   azure_resource_create:
@@ -32,15 +32,15 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        # working-directory: environment/dev
+        working-directory: environment/dev
 
       - name: Terraform validate
         run: terraform validate
-        # working-directory: environment/dev
+        working-directory: environment/dev
 
       - name: Terraform Plan
         run: terraform plan
-        # working-directory: environment/dev
+        working-directory: environment/dev
 
   
       
